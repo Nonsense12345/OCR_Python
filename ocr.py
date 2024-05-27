@@ -10,7 +10,7 @@ def extract_text_from_image(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
 
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (22, 10))
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (27, 10))
     dilated = cv2.dilate(thresh, kernel, iterations=1)
 
     contours, _ = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
